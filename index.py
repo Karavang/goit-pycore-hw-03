@@ -1,4 +1,5 @@
 from datetime import datetime
+from random import randint
 
 
 def get_days_from_today(date):
@@ -9,4 +10,10 @@ def get_days_from_today(date):
         return "Невірний формат заданої дати"
 
 
-print(get_days_from_today("2028-01-05"))
+def get_numbers_ticket(min, max, quantity):
+    arr = set()
+    if quantity > max - min:
+        return []
+    while len(arr) != quantity:
+        arr.add(randint(min, max))
+    return list(arr)
